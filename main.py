@@ -4,7 +4,6 @@ import string
 import csv
 import shutil
 import xml.etree.ElementTree as ET
-from multiprocessing import Pool
 from multiprocessing.pool import ThreadPool
 
 COUNT_ZIP_FILES = 50
