@@ -14,13 +14,11 @@ COUNT_SYMBOLS = 10
 TMP_DIR = "/tmp/test_ng/"
 
 
-# Генерация случайной строки
 def random_string(length):
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for _ in range(length))
 
 
-# Создание xml файла со случайными данными
 def create_xml_file(file_name):
     root = ET.Element("root")
     var_id = ET.SubElement(root, "var", name="id", value=random_string(10))
@@ -32,7 +30,6 @@ def create_xml_file(file_name):
     tree.write(file_name)
 
 
-# Создание zip архива с xml файлами
 def create_zip_archive(zip_name):
     for i in range(COUNT_XML_FILES):
         file_name = f"{i}.xml"
@@ -41,7 +38,6 @@ def create_zip_archive(zip_name):
     os.system(f"rm *.xml")
 
 
-# Обработка xml файла и запись данных в csv файлы
 def process_zip_file(zip_file):
     csv_file_1 = open(f"{TMP_DIR}file_with_level.csv", "a")
     csv_file_2 = open(f"{TMP_DIR}file_with_object_name.csv", "a")
